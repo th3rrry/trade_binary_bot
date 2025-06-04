@@ -14,22 +14,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const tf = timeframeText.toLowerCase();
 
     if (tf.includes("5 секунд") || tf.includes("5 seconds") || tf.includes("5 soniya")) {
-        return [65, 82];
+        return [60, 71];
     }
     if (tf.includes("15 секунд") || tf.includes("15 seconds") || tf.includes("15 soniya")) {
-        return [70, 84];
+        return [60, 72];
     }
     if (tf.includes("1 минута") || tf.includes("1 minute") || tf.includes("1 daqiqa")) {
-        return [75, 87];
+        return [65, 81];
     }
     if (tf.includes("3 минуты") || tf.includes("3 minutes") || tf.includes("3 daqiqa")) {
-        return [83, 87];
+        return [66, 82];
     }
     if (tf.includes("5 минут") || tf.includes("5 minutes") || tf.includes("5 daqiqa")) {
-        return [85, 89];
+        return [70, 93];
     }
     if (tf.includes("10 минут") || tf.includes("10 minutes") || tf.includes("10 daqiqa")) {
-        return [86, 94];
+        return [75, 94];
     }
 
     return [70, 85]; // значение по умолчанию
