@@ -11,10 +11,34 @@
     <div class="container">
         <div class="sidebar">
             <div class="logo">
-                <img src="https://api.dicebear.com/7.x/icons/svg?seed=tradepro" alt="Logo">
-                <h1 id="logo-text">Trade Signal</h1>
+                <h1 id="logo-text">Торговый сигнал</h1>
             </div>
             <div class="settings">
+            <!-- Кастомный селектор с флагами -->
+            <div class="input-group language-dropdown">
+                <label id="language-label">Язык</label>
+                <div class="lang-select" id="custom-language-selector">
+                    <button class="lang-selected" onclick="toggleLangDropdown()">
+                        <img id="current-flag" src="https://flagcdn.com/w20/ru.png" alt="RU" class="flag-icon">
+                        <span id="current-lang-text">Русский</span>
+                        <svg class="arrow-down" viewBox="0 0 24 24" width="16" height="16">
+                            <path d="M7 10l5 5 5-5z" fill="currentColor"></path>
+                        </svg>
+                    </button>
+                    <div class="lang-dropdown-content" id="lang-options">
+                        <div class="lang-item" data-lang="ru" data-flag="https://flagcdn.com/w20/ru.png">Русский</div>
+                        <div class="lang-item" data-lang="en" data-flag="https://flagcdn.com/w20/gb.png">English</div>
+                        <div class="lang-item" data-lang="uz" data-flag="https://flagcdn.com/w20/uz.png">O'zbek</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Скрытый реальный селект для совместимости -->
+                <select id="language" onchange="changeLanguage()" style="display: none;">
+                    <option value="ru">Русский</option>
+                    <option value="en">English</option>
+                    <option value="uz">O'zbek</option>
+                </select>
                 <div class="input-group">
                     <label id="currency-label">Инструмент</label>
                     <select id="currency-pair">
@@ -67,15 +91,17 @@
                         <option>10 минут</option>
                     </select>
                 </div>
-                <button id="generate-btn">Получить сигнал</button>
-            </div>
-            <div class="language-selector">
-                <label for="language">Language</label>
-                <select id="language" onchange="changeLanguage()">
-                    <option value="ru">Русский</option>
-                    <option value="en">English</option>
-                    <option value="uz">O'zbek</option>
-                </select>
+                <div class="button-group">
+                    <button id="generate-btn" class="button button-green">Получить сигнал</button>
+                    <a href="https://t.me/+hScZSoUXQe9jN2Ji" target="_blank" class="button button-blue">
+                        <span class="telegram-icon-text">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24" fill="white">
+                                <path d="M9.93 12.645 9.6 16.306c.49 0 .703-.21.96-.46l2.3-2.175 4.77 3.48c.87.48 1.5.23 1.72-.81l3.12-14.7c.28-1.25-.45-1.74-1.29-1.45L1.56 9.03c-1.21.47-1.2 1.14-.21 1.44l4.96 1.55L18.39 4.92c.45-.3.87-.13.53.17L9.93 12.645z"/>
+                            </svg>
+                            Telegram
+                        </span>
+                    </a>
+                </div>
             </div>
         </div>
         <div class="main-content">
